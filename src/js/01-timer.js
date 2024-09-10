@@ -12,6 +12,7 @@ const minutesEl = document.querySelector('span[data-minutes]');
 const secondsEl = document.querySelector('span[data-seconds]');
 let countdownInterval = null;
 
+startButton.disabled = true;
 
 const options = {
   enableTime: true,
@@ -81,4 +82,8 @@ function convertMs(ms) {
 startButton.addEventListener('click', () => {
   startButton.disabled = true;
   startCountdown();
+});
+
+document.querySelector('#datetime-picker').addEventListener('input', () => {
+  startButton.disabled = true;
 });
